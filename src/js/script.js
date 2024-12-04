@@ -8,6 +8,16 @@ function listen(event, selector, callback) {
   return selector.addEventListener(event, callback);
 }
 
+const cookieModal = select('.cookie-modal');
+const settingModal = select('.setting-modal');
+const acceptButton = select('.accept-btn');
+const settingsButton = select('.settings-btn');
+const saveButton = select('.save-btn');
+const browserToggle = select('#browser-toggle');
+const osToggle = select('#os-toggle');
+const screenHeightToggle = select('#screen-height-toggle');
+const screenWidthToggle = select('#screen-width-toggle');
+
 function setCookie(name, value, seconds) {
   const date = new Date();
   date.setTime(date.getTime() + seconds * 1000);
@@ -15,13 +25,16 @@ function setCookie(name, value, seconds) {
   document.cookie = name + '=' + value + ';' + expires + ';path=/';
 }
 
+// Used Chat-GBT and Google to help get code for this function
+// This function looks for a specific cookie by its name, logs its value if 
+// found, and returns true; otherwise, it logs "Cookies not found" and returns false.
 function getCookie(name) {
   const decodedCookies = decodeURIComponent(document.cookie);
   const cookiesArray = decodedCookies.split(';');
   for (let i = 0; i < cookiesArray.length; i++) {
-    let c = cookiesArray[i].trim();
-    if (c.indexOf(name + '=') === 0) {
-      console.log(`${name} = ${c.substring(name.length + 1, c.length)}`);
+    let cookie = cookiesArray[i].trim();
+    if (cookie.indexOf(name + '=') === 0) {
+      console.log(`${name} = ${cookie.substring(name.length + 1, cookie.length)}`);
       return true;
     }
   }
@@ -29,6 +42,7 @@ function getCookie(name) {
   return false;
 }
 
+// Used Chat-GBT and prevos project to help get code for the following function
 function getBrowserName() {
   const userAgent = navigator.userAgent;
   if (userAgent.indexOf('Chrome') > -1) {
@@ -63,16 +77,6 @@ function getScreenDimensions() {
     height: window.screen.height,
   };
 }
-
-const cookieModal = select('.cookie-modal');
-const settingModal = select('.setting-modal');
-const acceptButton = select('.accept-btn');
-const settingsButton = select('.settings-btn');
-const saveButton = select('.save-btn');
-const browserToggle = select('#browser-toggle');
-const osToggle = select('#os-toggle');
-const screenHeightToggle = select('#screen-height-toggle');
-const screenWidthToggle = select('#screen-width-toggle');
 
 document.addEventListener('DOMContentLoaded', () => {
   const cookiesAccepted = getCookie('cookies_accepted');
