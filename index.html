@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=devicewidth, initial-scale=1">
+    <meta name="author" content="Samuel Reutcky">
+    <meta name="description" content="My Web Project">
+    <meta name="keywords" content="html, css, seo, web devlopment">
+    <title>Solara</title>
+    <link rel="icon" href="./src/img/favicon.svg" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/mrspecht/cdn/reset.css" media="all">
+    <link rel="stylesheet" href="./src/css/style.css">
+    <script src="./src/js/script.js" defer></script>
+  </head>
+  <body>
+    <div class="cookie-modal">
+      <div class="modal-content">
+        <h3>Cookies</h3>
+        <p>We use cookies to improve your experience on our website. By clicking "Accept", you agree to the use of cookies for marketing and analytics purposes.</p>
+        <div class="button-container">
+          <button class="accept-btn">Accept</button>
+          <button class="settings-btn">Settings</button>
+        </div>
+      </div>
+    </div>
+    <div class="setting-modal">
+      <div class="modal-content">
+        <h3>Settings</h3>
+        <div class="toggle-container">
+          <div class="toggle-item">
+            <label for="browser-toggle">Browser</label>
+            <label class="switch">
+              <input type="checkbox" id="browser-toggle" name="browser-toggle" checked>
+              <span class="slider round"></span>
+            </label>
+          </div>
+          
+          <div class="toggle-item">
+            <label for="os-toggle">Operating System</label>
+            <label class="switch">
+              <input type="checkbox" id="os-toggle" name="os-toggle" checked>
+              <span class="slider round"></span>
+            </label>
+          </div>
+          
+          <div class="toggle-item">
+            <label for="screen-height-toggle">Screen Height</label>
+            <label class="switch">
+              <input type="checkbox" id="screen-height-toggle" name="screen-height-toggle" checked>
+              <span class="slider round"></span>
+            </label>
+          </div>
+          
+          <div class="toggle-item">
+            <label for="screen-width-toggle">Screen Width</label>
+            <label class="switch">
+              <input type="checkbox" id="screen-width-toggle" name="screen-width-toggle" checked>
+              <span class="slider round"></span>
+            </label>
+          </div>
+        </div>
+        <button class="save-btn">Save Preferences</button>
+      </div>
+    </div>
+    <header>
+			<div class="container flex flex-between">
+				<h2><a href="index.html">SOLARA</a></h2>
+				<nav>
+					<ul>
+						<li><a class="links" href="index.html">Home</a></li>
+						<li><a class="links" href="detail.html">Products</a></li>
+						<li><a class="links" href="#contact-us">Contact us</a></li>
+					</ul>
+			</div>
+		</header>
+    <main>
+      <div class="hero">
+        <div class="hero-content container">
+            <h1>Welcome to Solara</h1>
+            <p>Harness the Power of the Sun</p>
+            <a href="#">Learn more</a>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

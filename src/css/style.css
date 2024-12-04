@@ -1,0 +1,288 @@
+@charset "utf-8";
+
+.container {
+  width: min(100% - 32px, 1200px);
+  margin-inline: auto;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-between {
+  justify-content: space-between;
+}
+
+html, body {
+  font-family: 'Nunito Sans', Arial, Helvetica, sans-serif;
+}
+
+/* Hero section */
+.hero {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url(../img/hero-bg.jpg) no-repeat center center / cover;
+  text-align: center;
+}
+
+.hero-content h1 {
+  font-size: 6rem;
+  color: #fff;
+}
+
+.hero-content p {
+  color: #fff;
+  font-size: 2rem;
+  margin: -5px 0 30px 0;
+}
+
+.hero-content a {
+  text-decoration: none;
+  padding: 10px 20px;
+  font-size: 1.6rem;
+  background-color: #1ea01e;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.hero-content a:hover {
+  background-color: #38c72b;
+}
+
+/* Header */
+header {
+  background-color: rgb(0 0 0 / 0.80);
+  height: 65px;
+  line-height: 65px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+}
+
+header h2 {
+  font-size: 2.5rem;
+}
+
+header h2 a {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Navigation */
+header nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+header nav ul li {
+  display: inline;
+  margin-left: 25px;
+}
+
+header nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  position: relative;
+  font-size: 2rem;
+  transition: all 0.25s ease-in-out;
+}
+
+header nav ul li .links::after {
+  content: "";
+  position: absolute;
+  width: 0%; 
+  height: 2px;
+  background-color: #1ea01e;
+  bottom: -1px;
+  left: 0;
+  transition: all 0.25s ease-in-out;
+}
+
+header nav ul li .links:hover::after {
+  width: 100%;
+}
+
+/* Cookie Modal Styles */
+.cookie-modal {
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 1000;
+}
+
+.cookie-modal .modal-content {
+  width: 260px;
+  height: 260px;
+  background-color: #fff;
+  padding: 2rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.cookie-modal h3 {
+  margin: 0;
+  text-align: center;
+}
+
+.cookie-modal p {
+  font-size: 1.6rem;
+  color: #111010;
+}
+
+.cookie-modal .button-container {
+  display: flex;
+  gap: 10px;
+  margin-top: 1rem;
+}
+
+.cookie-modal .accept-btn{
+  background-color: #1ea01e;
+  color: white;
+  border: 2px solid #1ea01e;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.cookie-modal .settings-btn {
+  background-color: #fff;
+  color: #1ea01e;
+  border: 2px solid #1ea01e;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.cookie-modal .accept-btn:hover {
+  background-color: #1db81d;
+}
+
+.cookie-modal .settings-btn:hover {
+  border: 2px solid #1db81d;
+}
+
+/* Setting Modal Styles */
+.setting-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.setting-modal .modal-content {
+  width: 260px;
+  height: 260px;
+  background-color: #fff;
+  padding: 2rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.setting-modal h3 {
+  margin: 0;
+  text-align: center;
+}
+
+.setting-modal .toggle-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.setting-modal .toggle-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.setting-modal label {
+  font-size: 1.6rem;
+  color: #111010;
+}
+
+.setting-modal .switch {
+  position: relative;
+  display: inline-block;
+  width: 34px;
+  height: 20px;
+}
+
+.setting-modal .switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.setting-modal .slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: .4s;
+  border-radius: 34px;
+}
+
+.setting-modal .slider:before {
+  position: absolute;
+  content: "";
+  height: 14px;
+  width: 14px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+.setting-modal input:checked + .slider {
+  background-color: #1ea01e;
+}
+
+.setting-modal input:checked + .slider:before {
+  transform: translateX(14px);
+}
+
+.setting-modal .save-btn {
+  background-color: #1ea01e;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  align-self: center;
+  transition: all 0.3s ease-in-out;
+}
+
+.setting-modal .save-btn:hover {
+  background-color: #1db81d;
+}
