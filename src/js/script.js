@@ -78,7 +78,7 @@ function getScreenDimensions() {
   };
 }
 
-document.addEventListener('DOMContentLoaded', () => {
+listen('load', window, () => {
   const cookiesAccepted = getCookie('cookies_accepted');
 
   if (cookiesAccepted === true) {
